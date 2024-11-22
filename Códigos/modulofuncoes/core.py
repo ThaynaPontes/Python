@@ -15,7 +15,7 @@ def somaLista (valores=[]):
 
     resultado = 0
     for i in valores:
-        resultados+=i
+        resultado+=i
 
     return resultado
 
@@ -43,3 +43,14 @@ def inverter(palavra=""):
     # Vamos utilizar o comando len(length - comprimento) para obter a quantidade de caracteres da palavra.
     qtd =  len(palavra)
     invertida = ""
+    #Usamos qtd (quantidade de letra), porque não temos a informação da quantidade que será digitada pelo usúario.
+    for i in range(qtd-1, -1, -1):
+        invertida+=palavra[i]
+    return invertida
+
+def palindromo(palavra=""):
+    org = inverter(palavra) .lower()
+    if palavra.lower()==org:
+        return "É um palindromo"
+    else:
+        return "Não é um palindromo"
